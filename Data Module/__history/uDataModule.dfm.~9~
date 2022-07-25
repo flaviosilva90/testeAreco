@@ -1,0 +1,36 @@
+object Dtm: TDtm
+  OldCreateOrder = False
+  Height = 229
+  Width = 301
+  object AdoConexao: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=TESTES'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 32
+    Top = 32
+  end
+  object AdoQuery: TADOQuery
+    Active = True
+    Connection = AdoConexao
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from produtos_testeareco')
+    Left = 32
+    Top = 104
+  end
+  object ADOCommand: TADOCommand
+    Connection = AdoConexao
+    Parameters = <>
+    Left = 112
+    Top = 32
+  end
+  object DataSource: TDataSource
+    DataSet = AdoQuery
+    Left = 111
+    Top = 105
+  end
+end

@@ -1,0 +1,17 @@
+program pTesteAreco;
+
+uses
+  Vcl.Forms,
+  uDataModule in 'C:\Data Module\uDataModule.pas' {DataModule1: TDataModule},
+  uProdutoVO in 'C:\Model\uProdutoVO.pas',
+  uCadProdutos in 'View\uCadProdutos.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

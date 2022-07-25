@@ -1,0 +1,27 @@
+object Dtm: TDtm
+  OldCreateOrder = False
+  Height = 229
+  Width = 301
+  object AdoConexao: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=TESTES'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 32
+    Top = 32
+  end
+  object AdoQuery: TADOQuery
+    Connection = AdoConexao
+    Parameters = <>
+    Left = 48
+    Top = 104
+  end
+  object ADOCommand: TADOCommand
+    Connection = AdoConexao
+    Parameters = <>
+    Left = 128
+    Top = 56
+  end
+end

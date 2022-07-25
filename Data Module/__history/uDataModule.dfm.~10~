@@ -1,0 +1,65 @@
+object Dtm: TDtm
+  OldCreateOrder = False
+  Height = 229
+  Width = 301
+  object AdoConexao: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=TESTES'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 32
+    Top = 32
+  end
+  object AdoQuery: TADOQuery
+    Active = True
+    Connection = AdoConexao
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from produtos_testeareco')
+    Left = 32
+    Top = 104
+  end
+  object ADOCommand: TADOCommand
+    Connection = AdoConexao
+    Parameters = <>
+    Left = 112
+    Top = 32
+  end
+  object DataSource: TDataSource
+    DataSet = AdoQuery
+    Left = 111
+    Top = 105
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    MasterSource = DataSource
+    PacketRecords = 0
+    Params = <>
+    Left = 192
+    Top = 88
+    object DtsCODIGO_PRODUTO: TIntegerField
+      FieldName = 'CODIGO_PRODUTO'
+    end
+    object DtsNOME_PRODUTO: TStringField
+      FieldName = 'NOME_PRODUTO'
+      Size = 50
+    end
+    object DtsPRECO_PRODUTO: TCurrencyField
+      FieldName = 'PRECO_PRODUTO'
+    end
+    object DtsESTOQUE_PRODUTO: TIntegerField
+      FieldName = 'ESTOQUE_PRODUTO'
+    end
+    object DtsCATEGORIA_PRODUTO: TStringField
+      FieldName = 'CATEGORIA_PRODUTO'
+      Size = 1
+    end
+    object DstSITUACAO_PRODUTO: TStringField
+      FieldName = 'SITUACAO_PRODUTO'
+      Size = 1
+    end
+  end
+end

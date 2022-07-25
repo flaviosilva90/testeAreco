@@ -1,0 +1,34 @@
+unit uProdutoVO;
+
+interface
+
+uses
+  SysUtils, Generics.Collections;
+
+type
+  TProdutoVO = class
+  private
+    FCodigoProd    : Integer;
+    FNomeProd      : String;
+    FPrecoProd     : Extended;
+    FEstoqueProd   : integer;
+    FCategoriaProd : string;
+    FSituacaoProd  : string;
+
+  public
+    property CodigoProd   : integer      read FCodigoProd     write FCodigoProd;
+    property NomeProd     : string       read FNomeProd       write FNomeProd;
+    property PrecoProd    : extended     read FPrecoProd      write FPrecoProd;
+    property EstoqueProd  : integer      read FEstoqueProd    write FEstoqueProd;
+    property CategoriaProd: string       read FCategoriaProd  write FCategoriaProd;
+    property SituacaoProd : string       read FSituacaoProd   write FSituacaoProd;
+  end;
+
+implementation
+
+{ TProdutoVO }
+
+initialization
+
+end.
+
